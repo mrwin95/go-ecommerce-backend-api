@@ -12,8 +12,8 @@ func NewRouter() *gin.Engine {
 
 	v1 := r.Group("/v1")
 	{
-		v1.GET("/ping", controller.Pong)
-		v1.GET("/user/1", controller.GetUserById)
+		v1.GET("/ping", controller.NewPongController().Pong)
+		v1.GET("/user/1", controller.NewUserController().GetUserById)
 	}
 	return r
 }
