@@ -1,8 +1,11 @@
 server:
   port: 8082
-
-databases:
-  user: admin
-  password: admin
-  host: localhost
-  dbName: shopDev
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  username: root
+  password: Thang123
+  dbname: shopdev
+  maxIdleConns: 10
+  maxOpenConns: 100
+  connMaxLifetime: 3600
