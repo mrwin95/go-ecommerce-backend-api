@@ -7,12 +7,13 @@ type Config struct {
 
 type MySQLSetting struct {
 	Host            string `mapstructure:"host"`
-	Port            string `mapstructure:"port"`
+	Port            int    `mapstructure:"port"`
 	Username        string `mapstructure:"username"`
 	Password        string `mapstructure:"password"`
-	MaxIdleConns    string `mapstructure:"maxIdleConns"`
-	MaxOpenConns    string `mapstructure:"maxOpenConns"`
-	ConnMaxLifetime string `mapstructure:"connMaxLifetime"`
+	Dbname          string `mapstructure:"dbname"`
+	MaxIdleConns    int    `mapstructure:"maxIdleConns"`
+	MaxOpenConns    int    `mapstructure:"maxOpenConns"`
+	ConnMaxLifetime int    `mapstructure:"connMaxLifetime"`
 }
 
 type LoggerSetting struct {
