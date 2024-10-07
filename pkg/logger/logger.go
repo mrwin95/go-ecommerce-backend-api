@@ -24,11 +24,20 @@ func NewLogger(config setting.LoggerSetting) *LoggerZap {
 		level = zapcore.DebugLevel
 	case "info":
 		level = zapcore.InfoLevel
+	case "warn":
+		level = zapcore.WarnLevel
+	case "error":
+		level = zapcore.ErrorLevel
 	default:
 		level = zapcore.InfoLevel
 	}
 	encoder := getEncoderLog()
 	hook := lumberjack.Logger{
+		// Filename:   "./storages/logs/dev.xxx.log",
+		// MaxSize:    500, // megabytes
+		// MaxBackups: 3,
+		// MaxAge:     28,   //days
+		// Compress:   true, // disabled by default
 		Filename:   config.FileLogName,
 		MaxSize:    config.MaxSize, // megabytes
 		MaxBackups: config.MaxBackups,
